@@ -35,54 +35,67 @@ export default {
   height: 100px;
   border: none;
   margin: 0px 10px;
+  outline: none;
+  cursor: pointer;
 }
 
-#very-bad{
+#very-bad {
   background-position: 0px 0px;
 }
 
-#very-bad:hover{
+#very-bad:hover {
   background-position: 0px -100px;
 }
 
-#very-bad:active{
+#very-bad:active {
   background-position: 0px -200px;
 }
 
-#bad{
+#bad {
   background-position: -101px 0px;
 }
 
-#bad:hover{
+#bad:hover {
   background-position: -101px -100px;
 }
 
-#bad:active{
+#bad:active {
   background-position: 101px -200px;
 }
 
-#ok{
+#ok {
   background-position: -202px 0px;
 }
 
-#ok:hover{
+#ok:hover {
   background-position: -202px -100px;
 }
 
-#ok:active{
+#ok:active {
   background-position: -202px -200px;
 }
 
-#very-bad{
-  background-position: 0px 0px;
+#good {
+  background-position: -303px 0px;
 }
 
-#very-bad:hover{
-  background-position: 0px 200px;
+#good:hover {
+  background-position: -303px -100px;
 }
 
-#very-bad-hover{
-  background-position: 0%;
+#good:active {
+  background-position: -303px -200px;
 }
 
+#very-good {
+  background-position: -404px 0px;
+}
+
+#very-good:hover {
+  background-position: -404px -100px;
+}
+
+#very-good:active {
+  background-position: -404px -200px;
+}
 </style>

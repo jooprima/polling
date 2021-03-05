@@ -5,9 +5,7 @@
         Silahkan Berikan Penilaian Anda Terhadap Pelayanan Kami
       </h3>
 
-      <div class="emoticon">
-        <!-- Ini akan menjadi component vote -->
-      </div>
+      <div class="emoticons"><vote /></div>
     </section>
 
     <section class="finish">
@@ -18,23 +16,29 @@
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+// import Vote from "@/components/Vote.vue";
+import Vote from "../components/Vote.vue";
 
 export default {
   name: "Home",
-  components: { }
+  components: { Vote },
 };
 </script>
 
 <style type="text/css">
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-    align-items: center;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: center;
+}
 
-  section{
-    width: 100%;
-  }
+section {
+  width: 100%;
+}
+
+.emoticons{
+  display: flex;
+  justify-content: center;
+}
 </style>
