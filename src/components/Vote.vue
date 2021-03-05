@@ -4,7 +4,9 @@
       v-for="(emoticon, index) in emoticons"
       :key="index"
       :id="emoticon"
+      :value="emoticon"
       class="btn-emoticon"
+      @click="vote"
     ></button>
   </div>
 </template>
@@ -21,6 +23,13 @@ export default {
       emoticons: ["very-bad", "bad", "ok", "good", "very-good"],
     };
   },
+  methods:{
+    vote(e){
+      var voted = e.target.value;
+      
+      localStorage.setItem('vote',voted);
+    }
+  }
 };
 </script>
 
