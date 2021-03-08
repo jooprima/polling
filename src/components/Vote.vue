@@ -29,6 +29,7 @@ export default {
     vote(e) {
       var voted = e.target.value;
 
+      var keyStorage = moment().format("YYYYMMDDhmmss");
       var create_at = moment().format("YYYY-MM-DD h:mm:ss a");
 
 
@@ -39,7 +40,7 @@ export default {
 
       var jsonToString = JSON.stringify(data);
 
-      localStorage.setItem("vote", jsonToString);
+      localStorage.setItem(keyStorage, jsonToString);
     },
   },
 };
