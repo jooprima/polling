@@ -29,11 +29,17 @@ export default {
     vote(e) {
       var voted = e.target.value;
 
-      var waktu = moment().format("YYYY-MM-DD h:mm:ss a");
+      var create_at = moment().format("YYYY-MM-DD h:mm:ss a");
 
-      console.log(waktu);
 
-      localStorage.setItem("vote", voted);
+      var data = {
+        vote: voted,
+        create_at: create_at
+      }
+
+      var jsonToString = JSON.stringify(data);
+
+      localStorage.setItem("vote", jsonToString);
     },
   },
 };
