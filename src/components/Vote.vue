@@ -15,6 +15,8 @@
 // @ is an alias to /src
 // import HelloWorld from "@/components/HelloWorld.vue";
 
+import moment from "moment";
+
 export default {
   name: "Home",
   components: {},
@@ -23,13 +25,17 @@ export default {
       emoticons: ["very-bad", "bad", "ok", "good", "very-good"],
     };
   },
-  methods:{
-    vote(e){
+  methods: {
+    vote(e) {
       var voted = e.target.value;
-      
-      localStorage.setItem('vote',voted);
-    }
-  }
+
+      var waktu = moment().format("YYYY-MM-DD h:mm:ss a");
+
+      console.log(waktu);
+
+      localStorage.setItem("vote", voted);
+    },
+  },
 };
 </script>
 
