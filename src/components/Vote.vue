@@ -25,14 +25,13 @@ export default {
   data: function() {
     return {
       emoticons: ["very-bad", "bad", "ok", "good", "very-good"],
-      isDisable: false,
-      emoticonClick : false
+      emoticonClick : ''
     };
   },
   methods: {
     vote(e) {
       var voted = e.target.value;
-      this.isDisable = true;
+
       this.emoticonClick = voted;
 
       var keyStorage = moment().format("YYYYMMDDhmmss");
@@ -48,6 +47,11 @@ export default {
       localStorage.setItem(keyStorage, jsonToString);
     },
   },
+  computed:{
+    isDisable : function(){
+      return this.emoticonClick.length === 0 ? false : true;
+    }
+  }
 };
 </script>
 
