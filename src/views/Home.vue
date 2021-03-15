@@ -9,7 +9,7 @@
     </section>
 
     <section class="finish">
-      <transition name="fade">
+      <transition name="fade"  @after-enter="resetVote">
         <h4 v-if="show">Terima Kasih Telah Memberikan Penilaian Anda</h4>
       </transition>
     </section>
@@ -33,6 +33,9 @@ export default {
     vote() {
       this.show = true;
     },
+    resetVote(){
+      this.show = false;
+    }
   },
 };
 </script>
@@ -40,10 +43,10 @@ export default {
 <style type="text/css">
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1.5s;
+  transition: opacity 0.5s ease;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
