@@ -5,11 +5,13 @@
         Silahkan Berikan Penilaian Anda Terhadap Pelayanan Kami
       </h3>
 
-      <div class="emoticons"><vote /></div>
+      <div class="emoticons"><vote :voteProp="vote" /></div>
     </section>
 
     <section class="finish">
-      <h4>Terima Kasih Telah Memberikan Penilaian Anda</h4>
+      <transition name="fade">
+        <h4 v-if="show">Terima Kasih Telah Memberikan Penilaian Anda</h4>
+      </transition>
     </section>
   </div>
 </template>
@@ -21,7 +23,17 @@ import Vote from "../components/Vote.vue";
 
 export default {
   name: "Home",
+  data: function() {
+    return {
+      show: false,
+    };
+  },
   components: { Vote },
+  methods: {
+    vote() {
+      this.show = true;
+    },
+  },
 };
 </script>
 
@@ -37,16 +49,16 @@ section {
   width: 100%;
 }
 
-.give-your-vote{
+.give-your-vote {
   font-size: 21px;
 }
 
-.emoticons{
+.emoticons {
   display: flex;
   justify-content: center;
 }
 
-.finish{
+.finish {
   position: absolute;
   bottom: 20px;
 }

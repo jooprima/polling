@@ -6,7 +6,7 @@
       :id="emoticon"
       :value="emoticon"
       class="btn-emoticon"
-      :class="{active: emoticon == emoticonClick}"
+      :class="{ active: emoticon == emoticonClick }"
       :disabled="isDisable"
       @click="vote"
     ></button>
@@ -21,11 +21,15 @@ import moment from "moment";
 
 export default {
   name: "Vote",
-  components: {},
+  props: {
+    voteProp: {
+      type: Function,
+    },
+  },
   data: function() {
     return {
       emoticons: ["very-bad", "bad", "ok", "good", "very-good"],
-      emoticonClick : ''
+      emoticonClick: "",
     };
   },
   methods: {
@@ -45,13 +49,15 @@ export default {
       var jsonToString = JSON.stringify(data);
 
       localStorage.setItem(keyStorage, jsonToString);
+
+      this.voteProp();
     },
   },
-  computed:{
-    isDisable : function(){
+  computed: {
+    isDisable: function() {
       return this.emoticonClick.length === 0 ? false : true;
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -79,7 +85,7 @@ export default {
 }
 
 #very-bad.active,
- #very-bad:active{
+#very-bad:active {
   background-position: 0px -200px;
 }
 
